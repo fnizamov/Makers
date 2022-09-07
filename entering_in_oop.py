@@ -108,21 +108,21 @@
 
 # ********************************************************************************************************************
 
-class Cars:
-    car_counter = 0
+# class Cars:
+#     car_counter = 0
 
-    def __init__(self, color, model):
-        self.color = color
-        self.model = model
-        Cars.car_counter += 1
+#     def __init__(self, color, model):
+#         self.color = color
+#         self.model = model
+#         Cars.car_counter += 1
 
-    def __str__(self):
-        return f'{self.color}, {self.model}'
+#     def __str__(self):
+#         return f'{self.color}, {self.model}'
 
 
-car1 = Cars('White', 'Toyota')
+# car1 = Cars('White', 'Toyota')
 # print(car1.car_counter)
-car2 = Cars('Black', 'Honda')
+# car2 = Cars('Black', 'Honda')
 # print(car2.car_counter)
 # print(car1)
 
@@ -153,5 +153,102 @@ car2 = Cars('Black', 'Honda')
 Абстракция      | - Три неосновных принципа ООП
 Композиция      |
 """
+
+# ********************************************************************************************************************
+
+# class MyClass:
+#     var1 = 10
+
+#     def __init__(self):
+#         self.var2 = 20
+#         self.var3 = 30
+
+# obj = MyClass()
+# obj.var1 # 10
+# obj.var2 # 20
+# obj.var3 # 30
+# obj.var4 = 40
+# print(obj.__dict__)
+
+# ********************************************************************************************************************
+
+# setattr(obj, 'var5', 50) # obj.var5 = 50
+# print(obj.var5) # 50
+# print(hasattr(obj, 'var7')) # False
+# print(getattr(obj, 'var1')) # obj.var1 - 10
+# print(getattr(obj, 'var8', 'Нет такого атрибута')) # Нет такого атрибута
+
+# ********************************************************************************************************************
+
+# class Person:
+
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+#         print('Объект создан!')
+#         # __init__ - инициализатор объектов
+
+#     def __del__(self):
+#         print('Объект удален!')
+#         # __del__ - финализатор объекта
+
+# p1 = Person('Alexey', 33)
+# p2 = Person('Alexandr', 35)
+# p3 = Person('Anastasiya', 28)
+
+# ********************************************************************************************************************
+
+# class Product:
+#     def __init__(self, title: str = 'Товар', price: float = 0.0, quantity: int = 0, desc: str = 'Нет описания'):
+#         if not isinstance(title, str):
+#             raise ValueError('title must be str')
+#         self.title = title
+#         self.price = price
+#         self.quantity = quantity
+#         self.desc = desc
+
+# prod1 = Product(title=1234)
+# print(prod1) # ValueError('title must be str')
+
+# ********************************************************************************************************************
+
+# from dataclasses import dataclass
+# from typing import Any
+
+
+# @dataclass
+# class Product:
+#     title: str
+#     type_: Any
+#     price: float = 0.0
+#     quantity: int = 0
+#     description: str = 'Нет описания'
+
+# prod1 = Product(title=1234, type_='Rice', price=90.0, quantity=10)
+# print(prod1.__dict__)
+
+# ********************************************************************************************************************
+
+# class Animals:
+#     pass
+
+# a = Animals()
+# a.legs = 4
+# print(a.__dict__)
+
+# ********************************************************************************************************************
+
+# class Cars:
+#     __slots__ = ['model', 'color', 'brand']
+
+#     def __init__(self, model, color, brand):
+#         self.model = model
+#         self.color = color
+#         self.brand = brand
+
+# car1 = Cars('Camry', 'White', 'Toyota')
+# car1.volume = 3.5 # AttributeError
+# print(car1.__dict__) # AttributeError
+# print(dir(car1))
 
 # ********************************************************************************************************************
